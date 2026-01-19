@@ -1,6 +1,6 @@
 export const company = {
   name: "Med Office HQ",
-  logo: "/assets/company/logo.png",
+  logo: "/assets/company/logo.jpg",
   description: "Medical Office Headquarters",
   website: "https://medicalofficehq.com",
   email: "contact@medicalofficehq.com",

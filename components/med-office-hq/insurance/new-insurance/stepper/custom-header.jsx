@@ -35,3 +35,12 @@ export default function IconHeader(props) {
     </div>
   );
 }
+
+export function CustomInnerHeader(props) {
+  const { displayName } = props;
+  return (
+    <div className="customInnerHeader">
+      <span>{displayName}</span>
+    </div>
+  );
+}

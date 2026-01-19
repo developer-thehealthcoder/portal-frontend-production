@@ -122,32 +122,6 @@ export function AppSidebar() {
   const pathname = usePathname();
   const { data: menu, isLoading: isMenuLoading } = useMenu();
 
-  // Add static "Check Logs" link under Automation menu
-  const augmentedMenu = useMemo(() => {
-    if (!menu) return [];
-    return menu.map((item) => {
-      if (item.name?.toLowerCase() === "automation") {
-        const subMenu = item.sub_menu || [];
-        const hasLogs = subMenu.some(
-          (sub) => sub.url === "/agent-logs" || sub.name === "Check Logs"
-        );
-        return {
-          ...item,
-          sub_menu: hasLogs
-            ? subMenu
-            : [
-                ...subMenu,
-                {
-                  name: "AI Agent Logs",
-                  url: "/agent-logs",
-                },
-              ],
-        };
-      }
-      return item;
-    });
-  }, [menu]);
-
   return (
     <>
       <Sidebar>
@@ -157,7 +131,7 @@ export function AppSidebar() {
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
-              <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-white">
+              <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                 <Image
                   src={company.logo}
                   alt="logo"
