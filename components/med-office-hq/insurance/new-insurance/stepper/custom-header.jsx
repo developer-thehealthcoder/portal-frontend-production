@@ -1,0 +1,37 @@
+import { CircleAlert, CircleCheck, CircleHelp, CircleX } from "lucide-react";
+
+export default function IconHeader(props) {
+  const { column, showColumnMenu, progressSort, enableMenu, enableSorting } =
+    props;
+
+  switch (column.colId) {
+    case "warning":
+      return <CircleAlert className="w-4 h-4" />;
+    case "success":
+      return <CircleCheck className="w-4 h-4 text-green-500" />;
+    case "failure":
+      return <CircleX className="w-4 h-4 text-red-500" />;
+    case "information":
+      return <CircleHelp className="w-4 h-4 text-blue-500" />;
+  }
+  return (
+    <div
+      className="custom-header ag-header-cell-label"
+      style={{ display: "flex", alignItems: "center" }}
+    >
+      {column.colId}
+      {enableSorting && (
+        <span
+          className="ag-header-icon ag-sort-icon"
+          onClick={() => progressSort(false)}
+        />
+      )}
+      {enableMenu && (
+        <span
+          className="ag-header-icon ag-header-cell-menu-button"
+          onClick={(e) => showColumnMenu(e.currentTarget)}
+        />
+      )}
+    </div>
+  );
+}
