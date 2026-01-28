@@ -38,38 +38,7 @@ export default function VerificationAndAuthorization() {
     : "light";
 
   // Row Data: The data to be displayed.
-  const [rowData, setRowData] = useState([
-    {
-      project_id: "1000000",
-      project_name: "Project 1",
-      executed_date: "2021-01-01",
-    },
-    {
-      project_id: "1000001",
-      project_name: "Project 2",
-      executed_date: "2021-01-02",
-    },
-    {
-      project_id: "1000002",
-      project_name: "Project 3",
-      executed_date: "2021-01-03",
-    },
-    {
-      project_id: "1000003",
-      project_name: "Project 4",
-      executed_date: "2021-01-04",
-    },
-    {
-      project_id: "1000004",
-      project_name: "Project 5",
-      executed_date: "2021-01-05",
-    },
-    {
-      project_id: "1000005",
-      project_name: "Project 6",
-      executed_date: "2021-01-06",
-    },
-  ]);
+  const [rowData, setRowData] = useState([]);
 
   // Column Definitions: Defines & controls grid columns.
   const [colDefs, setColDefs] = useState([
